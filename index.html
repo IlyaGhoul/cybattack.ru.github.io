@@ -508,13 +508,6 @@
     // Базовые URL: можно переопределить глобально перед загрузкой страницы
     const API_BASE = (typeof CYBER_VIS_API_BASE !== 'undefined') ? CYBER_VIS_API_BASE : (location.protocol + '//' + location.host);
     const WS_URL = (typeof CYBER_VIS_WS_URL !== 'undefined') ? CYBER_VIS_WS_URL : ((location.protocol === 'https:') ? 'wss://' + location.host + '/ws/monitor' : 'ws://' + location.host + '/ws/monitor');
-    let pingInterval = null;
-    let reconnectTimeout = null;
-    let chartUpdateTimer = null;
-    let liveAttempts = [];
-    let recentAttempts = [];
-    let statsUpdateTimer = null;
-    let blockedIps = [];
     
     // Показать ошибку
     function showError(message) {
